@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced Animation Collection</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: #111;
+        color: #fff;
+        min-height: 100vh;
+        justify-content: center;
+        font-family: sans-serif;
+      }
+
+      h1 {
+        margin-bottom: 2rem;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 1rem;
+        width: 90%;
+        max-width: 900px;
+      }
+
+      .btn {
+        padding: 1rem 1.5rem;
+        border: none;
+        cursor: pointer;
+        background: #222;
+        color: #fff;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+      }
+
+      /* Original 6 */
+      .btn.slide:hover {
+        transform: translateX(10px);
+        background: #0ff;
+        color: #000;
+      }
+      .btn.grow:hover {
+        transform: scale(1.2);
+        background: #f0f;
+        color: #000;
+      }
+      .btn.rotate:hover {
+        transform: rotate(15deg);
+        background: #ff0;
+        color: #000;
+      }
+      .btn.glow:hover {
+        box-shadow: 0 0 20px 5px #0f0;
+        background: #0f0;
+        color: #000;
+      }
+      .btn.flip:hover {
+        transform: rotateY(180deg);
+        background: #00f;
+        color: #fff;
+      }
+      .btn.pulse:hover {
+        animation: pulse 0.6s infinite alternate;
+        background: #f00;
+        color: #fff;
+      }
+
+      /* New 6 */
+      .btn.shake:hover {
+        animation: shake 0.5s infinite;
+        background: #ff69b4;
+        color: #000;
+      }
+      .btn.bounce:hover {
+        animation: bounce 0.6s infinite;
+        background: #ffa500;
+        color: #000;
+      }
+      .btn.shadow:hover {
+        box-shadow: 0 10px 30px #0ff;
+        background: #444;
+      }
+      .btn.skew:hover {
+        transform: skewX(20deg);
+        background: #0ff;
+        color: #000;
+      }
+      .btn.wave:hover {
+        animation: wave 1s infinite;
+        background: #8a2be2;
+        color: #fff;
+      }
+      .btn.blurred:hover {
+        filter: blur(2px);
+        background: #fff;
+        color: #000;
+      }
+
+      @keyframes pulse {
+        to {
+          transform: scale(1.1);
+          opacity: 0.8;
+        }
+      }
+
+      @keyframes shake {
+        0%,
+        100% {
+          transform: translateX(0);
+        }
+        25% {
+          transform: translateX(-5px);
+        }
+        50% {
+          transform: translateX(5px);
+        }
+        75% {
+          transform: translateX(-5px);
+        }
+      }
+
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      @keyframes wave {
+        0% {
+          transform: rotate(0deg);
+        }
+        50% {
+          transform: rotate(15deg);
+        }
+        100% {
+          transform: rotate(-15deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Advanced Animation Collection</h1>
+    <div class="grid">
+      <button class="btn slide">Slide</button>
+      <button class="btn grow">Grow</button>
+      <button class="btn rotate">Rotate</button>
+      <button class="btn glow">Glow</button>
+      <button class="btn flip">Flip</button>
+      <button class="btn pulse">Pulse</button>
+      <button class="btn shake">Shake</button>
+      <button class="btn bounce">Bounce</button>
+      <button class="btn shadow">Shadow</button>
+      <button class="btn skew">Skew</button>
+      <button class="btn wave">Wave</button>
+      <button class="btn blurred">Blur</button>
+    </div>
+  </body>
+</html>
