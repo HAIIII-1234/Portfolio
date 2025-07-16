@@ -1,320 +1,17 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Afnan's Portfolio</title>
+    <link rel="stylesheet" href="/CSS/index.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <style>
-      body {
-        font-family: sans-serif;
-        background: #f0f0f0;
-        color: #333;
-        margin: 0; /* Added to remove default body margin */
-      }
-
-      .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-      }
-
-      /* Header */
-      .header {
-        background: #222;
-        color: #fff;
-        padding: 15px 0;
-        text-align: center;
-      }
-
-      .header .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .logo {
-        font-size: 40px;
-        margin: 0;
-      }
-
-      .nav-links {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        gap: 32px;
-      }
-
-      .nav-links a {
-        color: #fff;
-        text-decoration: none;
-        font-weight: bold;
-        transition: color 0.3s ease;
-      }
-
-      .nav-links a:hover {
-        color: #ffd700;
-      }
-
-      .hamburger {
-        display: none; /* Hidden by default for desktop */
-        font-size: 1.8rem;
-        cursor: pointer;
-      }
-
-      /* Hero Section */
-      .hero {
-        background: linear-gradient(to right, #6a11cb, #2575fc); /* Example gradient */
-        color: #fff;
-        padding: 80px 0;
-        text-align: center;
-      }
-
-      .hero h2 {
-        font-size: 3.5rem;
-        margin-bottom: 15px;
-      }
-
-      .hero p {
-        font-size: 1.3rem;
-        margin-bottom: 30px;
-      }
-
-      .btn {
-        display: inline-block;
-        background-color: #ffd700;
-        color: #333;
-        padding: 12px 25px;
-        border-radius: 5px;
-        text-decoration: none;
-        font-weight: bold;
-        transition: background-color 0.3s ease;
-      }
-
-      .btn:hover {
-        background-color: #e6c200;
-      }
-
-      /* About Intro Section */
-      .intro {
-        padding: 60px 0;
-        background-color: #fff;
-      }
-
-      .intro-content {
-        display: flex;
-        align-items: center;
-        gap: 40px;
-      }
-
-      .intro-img {
-        width: 250px;
-        height: 250px;
-        border-radius: 50%;
-        object-fit: cover;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      }
-
-      .intro h3 {
-        font-size: 2.5rem;
-        color: #6a11cb;
-        margin-bottom: 15px;
-      }
-
-      .intro p {
-        font-size: 1.1rem;
-        line-height: 1.7;
-        margin-bottom: 15px;
-      }
-
-      /* Quote Section */
-      .quote {
-        background-color: #333;
-        color: #fff;
-        padding: 50px 0;
-        text-align: center;
-        font-style: italic;
-      }
-
-      .quote h4 {
-        font-size: 1.8rem;
-        max-width: 800px;
-        margin: 0 auto;
-        line-height: 1.5;
-      }
-
-      /* Footer */
-      .footer {
-        background-color: #222;
-        color: #f1f1f1;
-        padding: 40px 0 20px;
-        font-size: 0.95rem;
-      }
-
-      .footer-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 30px;
-        margin-bottom: 30px;
-      }
-
-      .footer h4 {
-        font-size: 1.2rem;
-        margin-bottom: 15px;
-        color: #ffd700;
-      }
-
-      .footer ul {
-        list-style: none;
-        padding: 0;
-      }
-
-      .footer ul li {
-        margin-bottom: 10px;
-      }
-
-      .footer a {
-        color: #ff91a4; /* light artistic pink tone */
-        text-decoration: none;
-        font-weight: bold;
-        transition: color 0.3s ease;
-      }
-
-      .footer a:hover {
-        color: #ffd700;
-      }
-
-      .footer-newsletter input[type="email"] {
-        width: calc(100% - 100px); /* Adjust width for button */
-        padding: 10px;
-        border: none;
-        border-radius: 5px;
-        margin-right: 10px;
-      }
-
-      .footer-newsletter button {
-        padding: 10px 20px;
-        background-color: #6a11cb;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-      }
-
-      .footer-newsletter button:hover {
-        background-color: #550bb3;
-      }
-
-      .social-icons i {
-        font-size: 1.8rem;
-        margin-right: 15px;
-        color: #ff91a4;
-        transition: color 0.3s ease;
-      }
-
-      .social-icons i:hover {
-        color: #ffd700;
-      }
-
-      .footer-copy {
-        text-align: center;
-        margin-top: 20px;
-        border-top: 1px solid #444;
-        padding-top: 20px;
-      }
-
-      /* Go to Top Button */
-      #toTopBtn {
-        display: none; /* Hidden by default */
-        position: fixed; /* Fixed position */
-        bottom: 30px; /* Place at the bottom */
-        right: 30px; /* Place at the right */
-        z-index: 99; /* Make sure it does not overlap */
-        border: none; /* Remove borders */
-        outline: none; /* Remove outline */
-        background-color: #6a11cb; /* Set a background color */
-        color: white; /* Text color */
-        cursor: pointer; /* Add a mouse pointer on hover */
-        padding: 15px; /* Some padding */
-        border-radius: 10px; /* Rounded corners */
-        font-size: 18px; /* Increase font size */
-        transition: background-color 0.3s ease;
-      }
-
-      #toTopBtn:hover {
-        background-color: #550bb3;
-      }
-
-      #toTopBtn a {
-        color: white;
-        text-decoration: none;
-      }
-
-      /* Hamburger Menu Responsive */
-      @media (max-width: 768px) {
-        .nav-links {
-          display: none;
-          flex-direction: column;
-          width: 100%;
-          background-color: #444;
-          position: absolute;
-          top: 70px; /* Adjust based on header height */
-          left: 0;
-          padding: 20px 0;
-        }
-
-        .nav-links.active {
-          display: flex;
-        }
-
-        .nav-links li {
-          text-align: center;
-          margin: 10px 0;
-        }
-
-        .hamburger {
-          display: block;
-        }
-
-        .header .container {
-          justify-content: space-between;
-        }
-
-        .intro-content {
-          flex-direction: column;
-          text-align: center;
-        }
-
-        .intro-img {
-          margin-bottom: 20px;
-        }
-
-        .footer-grid {
-          grid-template-columns: 1fr;
-          text-align: center;
-        }
-
-        .footer-newsletter form {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        }
-
-        .footer-newsletter input[type="email"] {
-          width: 80%;
-          margin-bottom: 10px;
-          margin-right: 0;
-        }
-      }
-    </style>
   </head>
   <body>
+    <!-- Header -->
     <header class="header">
       <div class="container">
         <h1 class="logo">Afnan</h1>
@@ -326,12 +23,14 @@
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </nav>
+        <!-- Hamburger Menu -->
         <div class="hamburger">
           <i class="fa-solid fa-bars"></i>
         </div>
       </div>
     </header>
 
+    <!-- Hero -->
     <section class="hero">
       <div class="container">
         <h2>Hi, I'm Afnan</h2>
@@ -340,6 +39,7 @@
       </div>
     </section>
 
+    <!-- About Intro -->
     <section class="intro">
       <div class="container intro-content">
         <img src="/IMAGES/afnan.png" alt="Afnan" class="intro-img" />
@@ -358,14 +58,17 @@
       </div>
     </section>
 
+    <!-- Quote -->
     <section class="quote">
       <div class="container">
         <h4>“Code is like magic — you write, and the world changes.”</h4>
       </div>
     </section>
 
+    <!-- Footer -->
     <footer class="footer">
       <div class="container footer-grid">
+        <!-- Newsletter -->
         <div class="footer-newsletter">
           <h4>Stay in the Loop</h4>
           <p>Monthly updates about my new projects & tips.</p>
@@ -377,6 +80,7 @@
           </form>
         </div>
 
+        <!-- Links -->
         <div class="footer-links">
           <h4>Quick Links</h4>
           <ul>
@@ -387,6 +91,7 @@
           </ul>
         </div>
 
+        <!-- Contact -->
         <div class="footer-contact">
           <h4>Contact Me</h4>
           <p>
@@ -400,6 +105,7 @@
           </p>
         </div>
 
+        <!-- Social -->
         <div class="footer-social">
           <h4>Follow</h4>
           <div class="social-icons">
@@ -413,10 +119,12 @@
       <p class="footer-copy">&copy; 2025 Afnan. All rights reserved.</p>
     </footer>
 
+    <!-- Go to Top Button -->
     <button id="toTopBtn" title="Go to Top">
       <a href="index.html"> <i class="fa-solid fa-chevron-up"></i></a>
     </button>
 
+    <!-- Hamburger Toggle Script -->
     <script>
       const hamburger = document.querySelector(".hamburger");
       const navLinks = document.querySelector(".nav-links");
@@ -427,4 +135,3 @@
     </script>
   </body>
 </html>
-```
