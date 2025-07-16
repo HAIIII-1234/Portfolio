@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mood Color Picker & Quote Generator</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
+
+      body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        transition: background-color 1s ease;
+        color: white;
+        text-align: center;
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 3rem;
+        margin-bottom: 10px;
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+      }
+
+      .buttons {
+        display: flex;
+        gap: 15px;
+        margin: 20px 0;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      button {
+        background: rgba(255 255 255 / 0.2);
+        border: none;
+        border-radius: 50px;
+        padding: 15px 30px;
+        font-size: 1.1rem;
+        color: white;
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        transition: background 0.3s ease, transform 0.2s ease;
+        user-select: none;
+      }
+      button:hover {
+        background: rgba(255 255 255 / 0.4);
+        transform: scale(1.1);
+      }
+
+      #quote {
+        max-width: 600px;
+        font-size: 1.5rem;
+        font-style: italic;
+        margin-top: 20px;
+        text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        min-height: 80px;
+      }
+
+      footer {
+        position: fixed;
+        bottom: 10px;
+        font-size: 0.9rem;
+        opacity: 0.6;
+        user-select: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>How Are You Feeling?</h1>
+
+    <div class="buttons">
+      <button data-mood="happy">Happy</button>
+      <button data-mood="calm">Calm</button>
+      <button data-mood="energetic">Energetic</button>
+      <button data-mood="focused">Focused</button>
+      <button data-mood="confident">Confident</button>
+      <button data-mood="playful">Playful</button>
+    </div>
+
+    <div id="quote">Pick a mood to see a quote!</div>
+
+    <script>
+      const moods = {
+        happy: {
+          color: "#ffdd59",
+          quotes: [
+            "Happiness is a choice you make.",
+            "Smile big, laugh often.",
+            "Let your joy be contagious.",
+          ],
+        },
+        calm: {
+          color: "#74b9ff",
+          quotes: [
+            "Breathe deeply, live simply.",
+            "Peace begins with a smile.",
+            "Calm mind, strong heart.",
+          ],
+        },
+        energetic: {
+          color: "#e17055",
+          quotes: [
+            "Energy and persistence conquer all.",
+            "Move fast, live louder.",
+            "Let your fire ignite the world.",
+          ],
+        },
+        focused: {
+          color: "#6c5ce7",
+          quotes: [
+            "Focus is your superpower.",
+            "Eyes on the prize, always.",
+            "Discipline today, success tomorrow.",
+          ],
+        },
+        confident: {
+          color: "#fd79a8",
+          quotes: [
+            "Own your power.",
+            "Confidence is silent; insecurities are loud.",
+            "Be bold, be brave.",
+          ],
+        },
+        playful: {
+          color: "#00b894",
+          quotes: [
+            "Play is the highest form of research.",
+            "Life's too short—laugh more!",
+            "Stay curious, stay fun.",
+          ],
+        },
+      };
+
+      const buttons = document.querySelectorAll("button[data-mood]");
+      const quoteEl = document.getElementById("quote");
+
+      buttons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const mood = btn.getAttribute("data-mood");
+          const moodData = moods[mood];
+
+          // Change background color
+          document.body.style.backgroundColor = moodData.color;
+
+          // Pick random quote
+          const randomQuote =
+            moodData.quotes[Math.floor(Math.random() * moodData.quotes.length)];
+
+          // Show quote with fade animation
+          quoteEl.style.opacity = 0;
+          setTimeout(() => {
+            quoteEl.textContent = randomQuote;
+            quoteEl.style.opacity = 1;
+          }, 300);
+        });
+      });
+    </script>
+  </body>
+</html>
