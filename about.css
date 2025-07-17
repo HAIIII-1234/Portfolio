@@ -1,165 +1,83 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Afnan</title>
-    <link rel="stylesheet" href="/CSS/index.css" />
-    <link rel="stylesheet" href="/CSS/about.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-  </head>
-  <body>
-    <header class="header">
-      <div class="container">
-        <h1 class="logo">Afnan</h1>
-        <nav>
-          <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </nav>
+.about {
+  background: #fff0f6;
+  color: #4a004a;
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: 60px auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
 
-        <div class="hamburger">
-          <i class="fa-solid fa-bars"></i>
-        </div>
-      </div>
-    </header>
+.about h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: left;
+}
 
-    <main>
-      <section class="about">
-        <div class="container">
-          <h2>About Me</h2>
+.about h3 {
+  font-size: 28px;
+}
 
-          <p>
-            Hi! I’m Afnan — a Grade 7 student diving deep into the creative
-            world of web design. I love using HTML and CSS to turn simple ideas
-            into colorful, working websites.
-          </p>
-          <p>
-            My journey started with basic tags and styles, but now I enjoy
-            experimenting with layouts, animations, and responsive design. Every
-            time I open my code editor, I learn something new!
-          </p>
-          <p>
-            I’m passionate about making websites that feel friendly and easy to
-            use. My goal is to mix good design with clean, clear code so
-            visitors enjoy every click.
-          </p>
-          <p>
-            Besides coding, I like sketching ideas in my notebook, learning from
-            online tutorials, and challenging myself with small creative
-            projects.
-          </p>
-          <br />
-          <h3>My Skills</h3>
-          <hr />
-          <br />
-          <ul class="skills-list">
-            <li>✔️ HTML5 semantic structure</li>
-            <li>✔️ CSS styling, layouts & colors</li>
-            <li>✔️ Forms & input fields</li>
-            <li>✔️ Responsive design basics</li>
-            <li>✔️ Animation & hover effects</li>
-          </ul>
+hr {
+  border: none;
+  border-top: 2px solid pink;
+  margin: 20px -5px;
+  width: 200px;
+}
 
-          <p>
-            Thanks for visiting my portfolio — I’m excited to keep growing and
-            build even cooler websites in the future!
-          </p>
-        </div>
-      </section>
-    </main>
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container footer-grid">
-        <!-- Newsletter -->
-        <div class="footer-newsletter">
-          <h4>Stay in the Loop</h4>
-          <p>Monthly updates about my new projects & tips.</p>
-          <form>
-            <input type="email" placeholder="Enter your email" required />
-            <button type="submit" class="ripple-btn">
-              <span>Subscribe</span>
-            </button>
-          </form>
-        </div>
+.about-text,
+.about-skills {
+  flex: 1 1 300px;
+}
 
-        <!-- Links -->
-        <div class="footer-links">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
+.about-text p {
+  margin-bottom: 1.2rem;
+  line-height: 1.7;
+  font-size: 1.1rem;
+}
 
-        <!-- Contact -->
-        <div class="footer-contact">
-          <h4>Contact Me</h4>
-          <p><i class="fas fa-phone-alt"></i> Phone:</p>
-          <p class="contact-detail"><a href="tel:+0421102616">0421102616</a></p>
-          <p><i class="fas fa-envelope"></i> Email:</p>
-          <p class="contact-detail">
-            <a href="mailto:imnotafnan23@gmail.com">imnotafnan23@gmail.com</a>
-          </p>
-        </div>
+.about-skills h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
 
-        <!-- Social -->
-        <div class="footer-social">
-          <h4>Follow</h4>
+.skills-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
-          <div class="social-icons">
-            <a href="https://facebook.com">
-              <i class="fa-brands fa-square-facebook"></i
-            ></a>
-            <a href="https://x.com/">
-              <i class="fa-brands fa-square-twitter"></i
-            ></a>
-            <a href="https://instagram.com">
-              <i class="fa-brands fa-square-instagram"></i
-            ></a>
-            <a href="https://github.com/HAIIII-1234"
-              ><i class="fa-brands fa-square-github"></i
-            ></a>
-          </div>
-        </div>
-      </div>
-      <hr class="footer-hr" />
-      <p class="footer-copy">&copy; 2025 Afnan. All rights reserved.</p>
-    </footer>
+.skills-list li {
+  background: #ffd6e7;
+  color: #4a004a;
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background 0.3s;
+}
 
-    <!-- Go to Top Button -->
-    <button id="toTopBtn" title="Go to Top">
-      <a href="index.html"> <i class="fa-solid fa-chevron-up"></i></a>
-    </button>
+.skills-list li:hover {
+  background: #ffb3d6;
+  cursor: default;
+}
 
-    <!-- Hamburger Toggle Script -->
-    <script>
-      const hamburger = document.querySelector(".hamburger");
-      const navLinks = document.querySelector(".nav-links");
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+  }
 
-      hamburger.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
-      });
-    </script>
-    <script>
-      const toTopBtn = document.getElementById("toTopBtn");
+  .about h2 {
+    font-size: 2rem;
+  }
 
-      window.addEventListener("scroll", function () {
-        if (window.pageYOffset > 20) {
-          toTopBtn.classList.add("show");
-        } else {
-          toTopBtn.classList.remove("show");
-        }
-      });
-    </script>
-  </body>
-</html>
+  .about-skills h3 {
+    font-size: 1.7rem;
+  }
+}
