@@ -42,7 +42,7 @@
               A colorful site for a fictional school art club, using HTML & CSS
               basics.
             </p>
-            <a href="https://haiiii-1234.github.io/school-art/" class="button"
+            <a href="https://haiiii-1234.github.io/school-art-/" class="button"
               >See This Project</a
             >
           </div>
@@ -100,14 +100,11 @@
         <!-- Contact -->
         <div class="footer-contact">
           <h4>Contact Me</h4>
-          <p>
-            Email:
+          <p><i class="fas fa-phone-alt"></i> Phone:</p>
+          <p class="contact-detail"><a href="tel:+0421102616">0421102616</a></p>
+          <p><i class="fas fa-envelope"></i> Email:</p>
+          <p class="contact-detail">
             <a href="mailto:imnotafnan23@gmail.com">imnotafnan23@gmail.com</a>
-          </p>
-          <p>
-            Location:
-            <br />
-            Melbourne, Australia
           </p>
         </div>
 
@@ -116,17 +113,29 @@
           <h4>Follow</h4>
 
           <div class="social-icons">
-            <a href=""> <i class="fa-brands fa-square-facebook"></i></a>
-            <a href=""> <i class="fa-brands fa-square-twitter"></i></a>
-            <a href=""> <i class="fa-brands fa-square-instagram"></i></a>
+            <a href="https://facebook.com">
+              <i class="fa-brands fa-square-facebook"></i
+            ></a>
+            <a href="https://x.com/">
+              <i class="fa-brands fa-square-twitter"></i
+            ></a>
+            <a href="https://instagram.com">
+              <i class="fa-brands fa-square-instagram"></i
+            ></a>
             <a href="https://github.com/HAIIII-1234"
               ><i class="fa-brands fa-square-github"></i
             ></a>
           </div>
         </div>
       </div>
+      <hr class="footer-hr" />
       <p class="footer-copy">&copy; 2025 Afnan. All rights reserved.</p>
     </footer>
+
+    <!-- Go to Top Button -->
+    <button id="toTopBtn" title="Go to Top">
+      <a href="index.html"> <i class="fa-solid fa-chevron-up"></i></a>
+    </button>
 
     <!-- Hamburger Toggle Script -->
     <script>
@@ -135,6 +144,17 @@
 
       hamburger.addEventListener("click", () => {
         navLinks.classList.toggle("active");
+      });
+    </script>
+    <script>
+      const toTopBtn = document.getElementById("toTopBtn");
+
+      window.addEventListener("scroll", function () {
+        if (window.pageYOffset > 20) {
+          toTopBtn.classList.add("show");
+        } else {
+          toTopBtn.classList.remove("show");
+        }
       });
     </script>
   </body>
